@@ -47,15 +47,18 @@ import { inject } from 'aurelia-dependency-injection';
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { bindable, customElement } from 'aurelia-templating';
 
-export let Dropdown = (_dec = customElement('aup-dropdown'), _dec2 = inject(EventAggregator), _dec(_class = _dec2(_class = (_class2 = class Dropdown {
-  constructor(eventAggregator) {
+export let Dropdown = (_dec = customElement('aup-dropdown'), _dec2 = inject(Element, EventAggregator), _dec(_class = _dec2(_class = (_class2 = class Dropdown {
+  constructor(element, eventAggregator) {
     this.show = false;
 
     _initDefineProp(this, 'color', _descriptor, this);
 
     _initDefineProp(this, 'right', _descriptor2, this);
 
+    this._element = element;
     this._eventAggregator = eventAggregator;
+
+    this._navlink = this._element.querySelector('.nav-link');
     this._subscription = this._eventAggregator.subscribe('aurelia-plugins:dropdown:hide', () => this.hide());
   }
 
@@ -70,6 +73,7 @@ export let Dropdown = (_dec = customElement('aup-dropdown'), _dec2 = inject(Even
 
   hide() {
     this.show = false;
+    this._navlink.classList.remove('active');
   }
 
   toggle(event) {
@@ -77,6 +81,7 @@ export let Dropdown = (_dec = customElement('aup-dropdown'), _dec2 = inject(Even
     this._subscription.dispose();
     this._eventAggregator.publish('aurelia-plugins:dropdown:hide', event);
     this.show = !this.show;
+    this.show ? this._navlink.classList.add('active') : this._navlink.classList.remove('active');
     this._subscription = this._eventAggregator.subscribe('aurelia-plugins:dropdown:hide', () => this.hide());
   }
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'color', [bindable], {

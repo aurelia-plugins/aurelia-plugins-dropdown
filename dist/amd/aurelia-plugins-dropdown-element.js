@@ -57,8 +57,8 @@ define(['exports', 'aurelia-dependency-injection', 'aurelia-event-aggregator', '
 
   var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
 
-  var Dropdown = exports.Dropdown = (_dec = (0, _aureliaTemplating.customElement)('aup-dropdown'), _dec2 = (0, _aureliaDependencyInjection.inject)(_aureliaEventAggregator.EventAggregator), _dec(_class = _dec2(_class = (_class2 = function () {
-    function Dropdown(eventAggregator) {
+  var Dropdown = exports.Dropdown = (_dec = (0, _aureliaTemplating.customElement)('aup-dropdown'), _dec2 = (0, _aureliaDependencyInjection.inject)(Element, _aureliaEventAggregator.EventAggregator), _dec(_class = _dec2(_class = (_class2 = function () {
+    function Dropdown(element, eventAggregator) {
       var _this = this;
 
       _classCallCheck(this, Dropdown);
@@ -69,7 +69,10 @@ define(['exports', 'aurelia-dependency-injection', 'aurelia-event-aggregator', '
 
       _initDefineProp(this, 'right', _descriptor2, this);
 
+      this._element = element;
       this._eventAggregator = eventAggregator;
+
+      this._navlink = this._element.querySelector('.nav-link');
       this._subscription = this._eventAggregator.subscribe('aurelia-plugins:dropdown:hide', function () {
         return _this.hide();
       });
@@ -94,6 +97,7 @@ define(['exports', 'aurelia-dependency-injection', 'aurelia-event-aggregator', '
 
     Dropdown.prototype.hide = function hide() {
       this.show = false;
+      this._navlink.classList.remove('active');
     };
 
     Dropdown.prototype.toggle = function toggle(event) {
@@ -103,6 +107,7 @@ define(['exports', 'aurelia-dependency-injection', 'aurelia-event-aggregator', '
       this._subscription.dispose();
       this._eventAggregator.publish('aurelia-plugins:dropdown:hide', event);
       this.show = !this.show;
+      this.show ? this._navlink.classList.add('active') : this._navlink.classList.remove('active');
       this._subscription = this._eventAggregator.subscribe('aurelia-plugins:dropdown:hide', function () {
         return _this4.hide();
       });

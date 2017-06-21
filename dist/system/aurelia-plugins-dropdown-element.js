@@ -64,8 +64,8 @@ System.register(['aurelia-dependency-injection', 'aurelia-event-aggregator', 'au
       customElement = _aureliaTemplating.customElement;
     }],
     execute: function () {
-      _export('Dropdown', Dropdown = (_dec = customElement('aup-dropdown'), _dec2 = inject(EventAggregator), _dec(_class = _dec2(_class = (_class2 = function () {
-        function Dropdown(eventAggregator) {
+      _export('Dropdown', Dropdown = (_dec = customElement('aup-dropdown'), _dec2 = inject(Element, EventAggregator), _dec(_class = _dec2(_class = (_class2 = function () {
+        function Dropdown(element, eventAggregator) {
           var _this = this;
 
           _classCallCheck(this, Dropdown);
@@ -76,7 +76,10 @@ System.register(['aurelia-dependency-injection', 'aurelia-event-aggregator', 'au
 
           _initDefineProp(this, 'right', _descriptor2, this);
 
+          this._element = element;
           this._eventAggregator = eventAggregator;
+
+          this._navlink = this._element.querySelector('.nav-link');
           this._subscription = this._eventAggregator.subscribe('aurelia-plugins:dropdown:hide', function () {
             return _this.hide();
           });
@@ -101,6 +104,7 @@ System.register(['aurelia-dependency-injection', 'aurelia-event-aggregator', 'au
 
         Dropdown.prototype.hide = function hide() {
           this.show = false;
+          this._navlink.classList.remove('active');
         };
 
         Dropdown.prototype.toggle = function toggle(event) {
@@ -110,6 +114,7 @@ System.register(['aurelia-dependency-injection', 'aurelia-event-aggregator', 'au
           this._subscription.dispose();
           this._eventAggregator.publish('aurelia-plugins:dropdown:hide', event);
           this.show = !this.show;
+          this.show ? this._navlink.classList.add('active') : this._navlink.classList.remove('active');
           this._subscription = this._eventAggregator.subscribe('aurelia-plugins:dropdown:hide', function () {
             return _this4.hide();
           });
