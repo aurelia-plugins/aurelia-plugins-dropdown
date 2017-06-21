@@ -1,0 +1,65 @@
+{
+  "name": "aurelia-plugins-dropdown",
+  "version": "2.3.0",
+  "description": "A dropdown plugin for Aurelia.",
+  "keywords": [
+    "aurelia",
+    "plugins",
+    "plugin",
+    "dropdown"
+  ],
+  "homepage": "https://github.com/aurelia-plugins/aurelia-plugins-dropdown",
+  "license": "MIT",
+  "author": "Bart Lenaerts <bart@itprosolutions.be> (http://itprosolutions.be/)",
+  "bugs": {
+    "url": "https://github.com/aurelia-plugins/aurelia-plugins-dropdown/issues"
+  },
+  "main": "dist/commonjs/aurelia-plugins-dropdown.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aurelia-plugins/aurelia-plugins-dropdown.git"
+  },
+  "dependencies": {
+    "aurelia-dependency-injection": "^1.3.1",
+    "aurelia-event-aggregator": "^1.0.1",
+    "aurelia-pal": "^1.3.0",
+    "aurelia-templating": "^1.4.2"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es2015-modules-amd": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-systemjs": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "run-sequence": "^1.2.2"
+  },
+  "scripts": {
+    "build": "gulp",
+    "clean": "rm -rf node_modules && yarn"
+  },
+  "jspm": {
+    "registry": "npm",
+    "main": "index",
+    "format": "amd",
+    "directories": {
+      "dist": "dist/amd"
+    },
+    "dependencies": {
+      "aurelia-dependency-injection": "^1.3.1",
+      "aurelia-event-aggregator": "^1.0.1",
+      "aurelia-pal": "^1.3.0",
+      "aurelia-templating": "^1.4.2"
+    }
+  },
+  "aurelia": {
+    "build": {
+      "resources": [
+        "aurelia-plugins-dropdown/aurelia-plugins-dropdown-element"
+      ]
+    }
+  }
+}
