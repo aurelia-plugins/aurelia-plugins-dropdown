@@ -72,7 +72,7 @@ define(['exports', 'aurelia-dependency-injection', 'aurelia-event-aggregator', '
       this._element = element;
       this._eventAggregator = eventAggregator;
 
-      this._navlink = this._element.querySelector('.nav-link');
+      this._navlink = this._element.querySelector('[slot=dropdown-toggle]');
       this._subscription = this._eventAggregator.subscribe('aurelia-plugins:dropdown:hide', function () {
         return _this.hide();
       });

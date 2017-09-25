@@ -58,7 +58,7 @@ export let Dropdown = (_dec = customElement('aup-dropdown'), _dec2 = inject(Elem
     this._element = element;
     this._eventAggregator = eventAggregator;
 
-    this._navlink = this._element.querySelector('.nav-link');
+    this._navlink = this._element.querySelector('[slot=dropdown-toggle]');
     this._subscription = this._eventAggregator.subscribe('aurelia-plugins:dropdown:hide', () => this.hide());
   }
 
