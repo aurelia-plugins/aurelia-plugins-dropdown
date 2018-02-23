@@ -1,8 +1,8 @@
 <template class="dropdown">
-  <a class="dropdown-toggle dropdown-toggle-${color}" click.trigger="toggle($event)" href>
+  <button class="dropdown-toggle dropdown-toggle-${color}" click.trigger="toggle($event)" type="button">
     <slot name="dropdown-toggle"></slot>
-  </a>
-  <div class="${ right ? 'dropdown-menu dropdown-menu-right' : 'dropdown-menu' }" show.bind="show">
+  </button>
+  <div class="dropdown-menu ${ right ? 'dropdown-menu-right' : '' } ${ up ? 'dropdown-menu-up' : '' }" show.bind="show">
     <slot name="dropdown-menu"></slot>
   </div>
 </template>

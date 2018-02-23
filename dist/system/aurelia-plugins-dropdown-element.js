@@ -3,7 +3,7 @@
 System.register(['aurelia-dependency-injection', 'aurelia-event-aggregator', 'aurelia-templating'], function (_export, _context) {
   "use strict";
 
-  var inject, EventAggregator, bindable, customElement, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, Dropdown;
+  var inject, EventAggregator, bindable, customElement, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, Dropdown;
 
   function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -76,6 +76,8 @@ System.register(['aurelia-dependency-injection', 'aurelia-event-aggregator', 'au
 
           _initDefineProp(this, 'right', _descriptor2, this);
 
+          _initDefineProp(this, 'up', _descriptor3, this);
+
           this._element = element;
           this._eventAggregator = eventAggregator;
 
@@ -127,6 +129,11 @@ System.register(['aurelia-dependency-injection', 'aurelia-event-aggregator', 'au
           return 'white';
         }
       }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'right', [bindable], {
+        enumerable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'up', [bindable], {
         enumerable: true,
         initializer: function initializer() {
           return false;

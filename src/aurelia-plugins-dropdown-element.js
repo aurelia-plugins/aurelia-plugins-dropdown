@@ -23,6 +23,7 @@ export class Dropdown {
   // BINDABLE PROPERTIES
   @bindable color = 'white';
   @bindable right = false;
+  @bindable up = false;
 
   // CONSTRUCTOR
   constructor(element, eventAggregator) {

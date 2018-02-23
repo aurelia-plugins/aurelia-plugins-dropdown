@@ -6,6 +6,7 @@ export declare class Dropdown {
     show: boolean;
     color: string;
     right: boolean;
+    up: boolean;
     constructor(element: any, eventAggregator: any);
     attached(): void;
     detached(): void;
