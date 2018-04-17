@@ -5,7 +5,7 @@ System.register(['aurelia-pal'], function (_export, _context) {
 
   var PLATFORM;
   function configure(aurelia) {
-    aurelia.globalResources(PLATFORM.moduleName('./aurelia-plugins-dropdown-element'));
+    aurelia.globalResources([PLATFORM.moduleName('./aurelia-plugins-dropdown-element')]);
   }
 
   _export('configure', configure);
