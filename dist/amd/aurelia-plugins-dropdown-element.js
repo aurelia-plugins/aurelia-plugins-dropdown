@@ -55,7 +55,7 @@ define(['exports', 'aurelia-dependency-injection', 'aurelia-event-aggregator', '
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
   }
 
-  var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
+  var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
 
   var Dropdown = exports.Dropdown = (_dec = (0, _aureliaTemplating.customElement)('aup-dropdown'), _dec2 = (0, _aureliaDependencyInjection.inject)(Element, _aureliaEventAggregator.EventAggregator), _dec(_class = _dec2(_class = (_class2 = function () {
     function Dropdown(element, eventAggregator) {
@@ -65,11 +65,9 @@ define(['exports', 'aurelia-dependency-injection', 'aurelia-event-aggregator', '
 
       this.show = false;
 
-      _initDefineProp(this, 'color', _descriptor, this);
+      _initDefineProp(this, 'direction', _descriptor, this);
 
       _initDefineProp(this, 'right', _descriptor2, this);
-
-      _initDefineProp(this, 'up', _descriptor3, this);
 
       this._element = element;
       this._eventAggregator = eventAggregator;
@@ -116,17 +114,12 @@ define(['exports', 'aurelia-dependency-injection', 'aurelia-event-aggregator', '
     };
 
     return Dropdown;
-  }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'color', [_aureliaTemplating.bindable], {
+  }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'direction', [_aureliaTemplating.bindable], {
     enumerable: true,
     initializer: function initializer() {
-      return 'white';
+      return 'down';
     }
   }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'right', [_aureliaTemplating.bindable], {
-    enumerable: true,
-    initializer: function initializer() {
-      return false;
-    }
-  }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'up', [_aureliaTemplating.bindable], {
     enumerable: true,
     initializer: function initializer() {
       return false;

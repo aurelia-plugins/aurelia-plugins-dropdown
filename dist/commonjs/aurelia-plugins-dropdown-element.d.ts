@@ -4,12 +4,12 @@ export declare class Dropdown {
     _navlink: any;
     _subscription: any;
     show: boolean;
-    color: string;
+    direction: string;
     right: boolean;
-    up: boolean;
     constructor(element: any, eventAggregator: any);
     attached(): void;
     detached(): void;
     hide(): void;
     toggle(event: any): void;
 }
+//# sourceMappingURL=aurelia-plugins-dropdown-element.d.ts.map

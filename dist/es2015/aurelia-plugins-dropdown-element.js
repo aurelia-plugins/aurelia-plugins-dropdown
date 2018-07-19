@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
+var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
 
 function _initDefineProp(target, property, descriptor, context) {
   if (!descriptor) return;
@@ -51,11 +51,9 @@ export let Dropdown = (_dec = customElement('aup-dropdown'), _dec2 = inject(Elem
   constructor(element, eventAggregator) {
     this.show = false;
 
-    _initDefineProp(this, 'color', _descriptor, this);
+    _initDefineProp(this, 'direction', _descriptor, this);
 
     _initDefineProp(this, 'right', _descriptor2, this);
-
-    _initDefineProp(this, 'up', _descriptor3, this);
 
     this._element = element;
     this._eventAggregator = eventAggregator;
@@ -86,17 +84,12 @@ export let Dropdown = (_dec = customElement('aup-dropdown'), _dec2 = inject(Elem
     this.show ? this._navlink.classList.add('active') : this._navlink.classList.remove('active');
     this._subscription = this._eventAggregator.subscribe('aurelia-plugins:dropdown:hide', () => this.hide());
   }
-}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'color', [bindable], {
+}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'direction', [bindable], {
   enumerable: true,
   initializer: function () {
-    return 'white';
+    return 'down';
   }
 }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'right', [bindable], {
-  enumerable: true,
-  initializer: function () {
-    return false;
-  }
-}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'up', [bindable], {
   enumerable: true,
   initializer: function () {
     return false;

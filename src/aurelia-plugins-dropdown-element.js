@@ -21,9 +21,8 @@ export class Dropdown {
   show = false;
 
   // BINDABLE PROPERTIES
-  @bindable color = 'white';
+  @bindable direction = 'down';
   @bindable right = false;
-  @bindable up = false;
 
   // CONSTRUCTOR
   constructor(element, eventAggregator) {
