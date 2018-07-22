@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Dropdown = undefined;
 
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
+var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
 
 var _aureliaDependencyInjection = require('aurelia-dependency-injection');
 
@@ -68,7 +68,9 @@ var Dropdown = exports.Dropdown = (_dec = (0, _aureliaTemplating.customElement)(
 
     _initDefineProp(this, 'direction', _descriptor, this);
 
-    _initDefineProp(this, 'right', _descriptor2, this);
+    _initDefineProp(this, 'noCaret', _descriptor2, this);
+
+    _initDefineProp(this, 'right', _descriptor3, this);
 
     this._element = element;
     this._eventAggregator = eventAggregator;
@@ -120,7 +122,12 @@ var Dropdown = exports.Dropdown = (_dec = (0, _aureliaTemplating.customElement)(
   initializer: function initializer() {
     return 'down';
   }
-}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'right', [_aureliaTemplating.bindable], {
+}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'noCaret', [_aureliaTemplating.bindable], {
+  enumerable: true,
+  initializer: function initializer() {
+    return false;
+  }
+}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'right', [_aureliaTemplating.bindable], {
   enumerable: true,
   initializer: function initializer() {
     return false;

@@ -1,5 +1,5 @@
 <template class="drop${direction}">
-  <button class="dropdown-toggle" click.trigger="toggle($event)" type="button">
+  <button class="${noCaret ? 'dropdown-toggle-no-caret' : 'dropdown-toggle'}" click.trigger="toggle($event)" type="button">
     <slot name="dropdown-toggle"></slot>
   </button>
   <div class="${right ? 'dropdown-menu-right' : 'dropdown-menu'}" show.bind="show">

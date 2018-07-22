@@ -103,7 +103,8 @@ $dropdown-menu-padding: 4px 0 !default;
 
 // DROPDOWNS
 .dropdown, .dropleft, .dropright, .dropup { position: relative; }
-.dropdown-toggle { white-space: nowrap; @include caret(); }
+[class^=dropdown-toggle] { cursor: pointer; white-space: nowrap; @include caret(); }
+.dropdown-toggle-no-caret { &::after, &::before { display: none; } }
 
 [class*=dropdown-menu] {
   background: $dropdown-menu-background; border: $dropdown-menu-border; border-radius: $dropdown-menu-border-radius; box-shadow: $dropdown-menu-box-shadow;

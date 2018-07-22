@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
+var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
 
 function _initDefineProp(target, property, descriptor, context) {
   if (!descriptor) return;
@@ -53,7 +53,9 @@ export let Dropdown = (_dec = customElement('aup-dropdown'), _dec2 = inject(Elem
 
     _initDefineProp(this, 'direction', _descriptor, this);
 
-    _initDefineProp(this, 'right', _descriptor2, this);
+    _initDefineProp(this, 'noCaret', _descriptor2, this);
+
+    _initDefineProp(this, 'right', _descriptor3, this);
 
     this._element = element;
     this._eventAggregator = eventAggregator;
@@ -89,7 +91,12 @@ export let Dropdown = (_dec = customElement('aup-dropdown'), _dec2 = inject(Elem
   initializer: function () {
     return 'down';
   }
-}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'right', [bindable], {
+}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'noCaret', [bindable], {
+  enumerable: true,
+  initializer: function () {
+    return false;
+  }
+}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'right', [bindable], {
   enumerable: true,
   initializer: function () {
     return false;

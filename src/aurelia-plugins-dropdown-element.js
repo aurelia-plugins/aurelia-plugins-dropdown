@@ -22,6 +22,7 @@ export class Dropdown {
 
   // BINDABLE PROPERTIES
   @bindable direction = 'down';
+  @bindable noCaret = false;
   @bindable right = false;
 
   // CONSTRUCTOR

@@ -5,6 +5,7 @@ export declare class Dropdown {
     _subscription: any;
     show: boolean;
     direction: string;
+    noCaret: boolean;
     right: boolean;
     constructor(element: any, eventAggregator: any);
     attached(): void;
